@@ -1,26 +1,65 @@
-<h2>Log insdfgs</h2>
+<div class="login_wrapper ">
+    <div class="animate form login_form custom-text-color">
+        <section class="login_content">
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <h1>Logar como membro</h1>
+            <div>
+                <%= f.email_field :email, autofocus: true,type:'text',class: 'form-control',placeholder: "Nome de usuário" %>
+            </div>
+            <div>
+                <%= f.password_field :password, autocomplete: "off", class: 'form-control',placeholder: "Senha",required: '' %>
+            </div>
+            <div>
+                <%= f.submit "Logar",class: 'btn btn-default submit' %>
+                <!-- <% if devise_mapping.rememberable? -%>
+                  <div class="reset_pass">
+                    <%= f.check_box :remember_me %>
+                    <%= f.label :remember_me %>
+                  </div>
+                <% end -%> -->
+                <%= render "members/shared/links" %>
+            </div>
+        </div>
+        <% end %>
+    </section>
+</div>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+<div id="register" class="animate form registration_form">
+    <section class="login_content">
+        <form>
+            <h1>Create Account</h1>
+            <div>
+                <input type="text" class="form-control" placeholder="Username" required=""/>
+            </div>
+            <div>
+                <input type="email" class="form-control" placeholder="Email" required=""/>
+            </div>
+            <div>
+                <input type="password" class="form-control" placeholder="Password" required=""/>
+            </div>
+            <div>
+                <a class="btn btn-default submit" href="index.html">Submit</a>
+            </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+            <div class="clearfix"></div>
 
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end -%>
+            <div class="separator">
+                <p class="change_link">Already a member ?
+                    <a href="#signin" class="to_register">
+                        Log in
+                    </a>
+                </p>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
+                <div class="clearfix"></div>
+                <br/>
 
-<%= render "members/shared/links" %>
+                <div>
+                    <h1>
+                        <i class="fa fa-paw"></i>
+                        Gentelella Alela!</h1>
+                    <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
+                </div>
+            </div>
+        </form>
+    </section>
+</div>

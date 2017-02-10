@@ -12,4 +12,12 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap/dist/css/bootstrap.min.css
+ *= require font-awesome/css/font-awesome.min.css
+ *= require nprogress/nprogress.css
+ *= require animate.css/animate.min.css
+ *= require custom.css
+
+ *= require custom_colors.css
+
  */

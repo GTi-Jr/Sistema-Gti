@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GTiSystem</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+<body class="login custom-color-login">
+
+      <div>
+          <a class="hiddenanchor" id="signup"></a>
+          <a class="hiddenanchor" id="signin"></a>
+    <%= yield %>
+  </div>
+  </body>
+</html>

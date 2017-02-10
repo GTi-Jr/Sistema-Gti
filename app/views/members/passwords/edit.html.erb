@@ -1,25 +1,30 @@
-<h2>Change your password</h2>
-
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-  <%= f.hidden_field :reset_password_token %>
-
-  <div class="field">
-    <%= f.label :password, "New password" %><br />
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
-    <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Change my password" %>
-  </div>
-<% end %>
-
 <%= render "members/shared/links" %>
+
+<div class="login_wrapper">
+    <div class="animate form login_form custom-text-color">
+        <section class="login_content">
+            <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+            <h1>Alterar Senha</h1>
+            <%= f.hidden_field :reset_password_token %>
+            <%= devise_error_messages! %>
+            <div>
+                <% if @minimum_password_length %>
+                <em>(<%= @minimum_password_length %>
+                    characters minimum)</em><br/>
+                <% end %>
+                <%= f.password_field :password, autofocus: true, autocomplete: "off",class: 'form-control',placeholder: "Senha" %>
+                %>
+            </div>
+            <div>
+                <%= f.password_field :password_confirmation, autocomplete: "off",class: 'form-control',placeholder: "Confirmar Senha" %>
+            </div>
+            <div>
+                <%= f.submit "Alterar minha senha",class: 'btn btn-default submit'  %>
+                <%= render "members/shared/links" %>
+            </div>
+
+            <% end %>
+
+        </section>
+    </div>
+</div>

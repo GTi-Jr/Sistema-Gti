@@ -1,0 +1,27 @@
+.custom-color-login{
+  /*background:#D4D2FF;*/
+  background-image: url("background-light.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.custom-text-color{
+  color: #B920FF;
+
+}
+
+/*.custom-text-color{
+  color: #379392;
+
+}*/
+
+.separator{
+  border-top: 1px solid #B920FF;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+.login-custom{
+    max-width: 100%;
+}
