@@ -1,51 +1,23 @@
-
-<div class="login_wrapper login-custom">
-
-
-<class="row center">
-    <div class="col-md-12 col-sm-12 col-xs-12">
+<class="row">
+    <div class="custom-center">
         <div class="x_panel">
             <div class="x_title">
                 <h2>Criar Nova Conta
                     <small>different form elements</small>
                 </h2>
-                <ul class="nav navbar-right panel_toolbox">
-                    <li>
-                        <a class="collapse-link">
-                            <i class="fa fa-chevron-up"></i>
-                        </a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            <i class="fa fa-wrench"></i>
-                        </a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li>
-                                <a href="#">Settings 1</a>
-                            </li>
-                            <li>
-                                <a href="#">Settings 2</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a class="close-link">
-                            <i class="fa fa-close"></i>
-                        </a>
-                    </li>
-                </ul>
                 <div class="clearfix"></div>
             </div>
             <div class="x_content">
                 <br/>
-                <%= form_for(resource,html: {id:'demo-form2', class: 'form-horizontal form-label-left'},as: :resources, url: registration_path(resource_name)) do |f| %>
+                <%= form_for(resource, as: resource_name, url: registration_path(resource_name),html: {id:'demo-form2', class: 'form-horizontal form-label-left'}) do |f| %>
 
+                <%= devise_error_messages! %>
                 <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Email
                         <span class="required">*</span>
                     </label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                          <%= f.email_field :email, autofocus: true,id:'email',required: 'required',class:'form-control col-md-7 col-xs-12' %>
+                        <%= f.email_field :email, autofocus: true,id:'email',required: 'required',class:'form-control col-md-7 col-xs-12',autocomplete: true %>
                         <!-- <input type="text" id="first-name" required="required" class="form-control col-md-7 col-xs-12"> -->
                     </div>
                 </div>
@@ -54,11 +26,12 @@
                         <span class="required">*</span>
                     </label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <% if @minimum_password_length %>
-                      <em>(<%= @minimum_password_length %> characters minimum)</em>
-                      <% end %><br />
+                        <% if @minimum_password_length %>
+                        <em>(<%= @minimum_password_length %>
+                            characters minimum)</em>
+                        <% end %><br/>
 
-                          <%= f.password_field :password, autocomplete: "off",id:'email',required: 'required',class:'form-control col-md-7 col-xs-12' %>
+                        <%= f.password_field :password, autocomplete: "off",id:'email',required: 'required',class:'form-control col-md-7 col-xs-12' %>
                         <!-- <input type="text" id="first-name" required="required" class="form-control col-md-7 col-xs-12"> -->
                     </div>
                 </div>
@@ -68,7 +41,7 @@
                         <span class="required">*</span>
                     </label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                          <%= f.password_field :password_confirmation, autocomplete: "off" ,id:'email',required: 'required',class:'form-control col-md-7 col-xs-12' %>
+                        <%= f.password_field :password_confirmation, autocomplete: "off" ,id:'email',required: 'required',class:'form-control col-md-7 col-xs-12' %>
                         <!-- <input type="text" id="first-name" required="required" class="form-control col-md-7 col-xs-12"> -->
                     </div>
                 </div>
@@ -76,9 +49,9 @@
                 <div class="form-group">
                     <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                         <button type="submit" class="btn btn-primary">Cancel</button>
-                            <%= f.submit "Submit",type:'submit', class: 'btn btn-success' %>
+                        <%= f.submit "Submit",type:'submit', class: 'btn btn-success' %>
                         <!-- <button type="submit" class="btn btn-success">Submit</button> -->
-                                <%= render "members/shared/links", class:" btn" %>
+                        <%= render "members/shared/links", class:" btn " %>
                     </div>
                 </div>
                 <% end %>
@@ -87,4 +60,4 @@
 
     </div>
 </div>
-</class>
+</div>

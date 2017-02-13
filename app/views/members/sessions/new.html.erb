@@ -1,8 +1,10 @@
 <div class="login_wrapper ">
     <div class="animate form login_form custom-text-color">
+
         <section class="login_content">
             <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <h1>Logar como membro</h1>
+
             <div>
                 <%= f.email_field :email, autofocus: true,type:'text',class: 'form-control',placeholder: "Nome de usuário" %>
             </div>
@@ -10,7 +12,7 @@
                 <%= f.password_field :password, autocomplete: "off", class: 'form-control',placeholder: "Senha",required: '' %>
             </div>
             <div>
-                <%= f.submit "Logar",class: 'btn btn-default submit' %>
+                <%= f.submit "Logar",class: 'btn btn-default submit', type: 'submit' %>
                 <!-- <% if devise_mapping.rememberable? -%>
                   <div class="reset_pass">
                     <%= f.check_box :remember_me %>

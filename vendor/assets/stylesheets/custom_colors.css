@@ -24,4 +24,19 @@
 
 .login-custom{
     max-width: 100%;
+    /*position: absolute;*/
+    /*width: 300px;*/
+    /*height: 200px;*/
+    /*z-index: 15;*/
+    /*top: 50%;*/
+    /*left: 50%;*/
+    /*margin: 50% 0 0 30%;*/
+}
+
+.custom-center{
+  right: 0px;
+  margin: 0px auto;
+  margin-top: 8%;
+  max-width: 500px;
+  position: relative;
 }
