@@ -3,8 +3,11 @@
 
         <section class="login_content">
             <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-            <h1>Logar como membro</h1>
 
+            <h1>Logar como membro</h1>
+            <%- flash.each do |name, msg| -%>
+              <%= content_tag :div, msg, id: "flash_#{name}" %>
+            <%- end -%>
             <div>
                 <%= f.email_field :email, autofocus: true,type:'text',class: 'form-control',placeholder: "Nome de usuário" %>
             </div>
