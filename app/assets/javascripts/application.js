@@ -14,13 +14,3 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-
-//= require jquery/dist/jquery.min.js
-//= require bootstrap/dist/js/bootstrap.min
-//= require fastclick/lib/fastclick.js
-//= require nprogress/nprogress.js
-//= require Chart.js/dist/Chart.min.js
-//= require gauge.js/dist/gauge.min.js
-//= require iCheck/icheck.min.js
-//= require skycons/skycons.js
-//= require custom.min.js

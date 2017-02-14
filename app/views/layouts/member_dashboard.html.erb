@@ -4,8 +4,9 @@
         <title>GTiSystem</title>
         <%= csrf_meta_tags %>
 
-        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+        <%= stylesheet_link_tag 'dashboard' %>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
 
     <body class="nav-md">
@@ -13,9 +14,14 @@
             <div class="main_container">
 
                 <%= render 'member_dashboard/shared/header' %>
+
+                <%= render 'member_dashboard/shared/nav' %>
+
                 <%= yield %>
                 <%= render 'member_dashboard/shared/footer' %>
             </div>
         </div>
+      <%= javascript_include_tag 'dashboard' %>
     </body>
+
 </html>
