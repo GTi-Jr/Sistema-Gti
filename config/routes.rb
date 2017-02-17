@@ -21,9 +21,9 @@ Rails.application.routes.draw do
   devise_scope :member do
     authenticated :member do
       root to: 'member_dashboard#index',  as: :authenticated_member_root
+    end
       unauthenticated :users do
         root to: "members/sessions#new", as: :unauthenticated_member_root
-      end
     end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

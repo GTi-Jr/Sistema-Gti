@@ -5,5 +5,6 @@ class AddFieldsToMember < ActiveRecord::Migration[5.0]
     add_column :members, :role, :string
     add_column :members, :join_date, :date
     add_column :members, :leave, :date
+    add_column :members, :picture, :string
   end
 end
