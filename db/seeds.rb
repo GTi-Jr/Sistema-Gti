@@ -5,4 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Member.create!(name: "Lucas Simão",email:"lucas64_64@hotmail.com", password: '12346578' ,encrypted_password: "$2a$11$LU5oCztZ.I3CAXNCYU1Y4OLdTM/JIiVcbX1sH46qmZ47SxOGp1iKu",picture:"/simao.jpg",role:"Diretor de Projetos")
+Role.create!(name:"Diretor de Projetos",role_type: 1)
+Role.create(name:"Diretor de Talentos",role_type: 1)
+Role.create(name:"Diretor de Marketing",role_type: 1)
+Role.create(name:"Diretor Presidente",role_type: 1)
+Role.create(name:"Diretor Administratio Financeiro",role_type: 1)
+Role.create(name:"Desenvolvedor",role_type: 1)
+Role.create(name:"Trainee",role_type: 1)
+Member.create!(name: "Lucas Simão",email:"lucas64_64@hotmail.com", password: '12346578' ,encrypted_password: "$2a$11$LU5oCztZ.I3CAXNCYU1Y4OLdTM/JIiVcbX1sH46qmZ47SxOGp1iKu",picture:"/simao.jpg",role: Role.find_by(name: "Diretor de Projetos"))

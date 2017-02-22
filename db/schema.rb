@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170222045115) do
+ActiveRecord::Schema.define(version: 20170222141110) do
 
   create_table "achievements", force: :cascade do |t|
     t.string   "name"
@@ -43,17 +43,18 @@ ActiveRecord::Schema.define(version: 20170222045115) do
     t.datetime "updated_at",                          null: false
     t.string   "name"
     t.string   "course"
-    t.string   "role"
     t.date     "join_date"
     t.date     "leave"
     t.string   "picture"
+    t.integer  "role_id"
     t.index ["email"], name: "index_members_on_email", unique: true
     t.index ["reset_password_token"], name: "index_members_on_reset_password_token", unique: true
+    t.index ["role_id"], name: "index_members_on_role_id"
   end
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"
-    t.integer  "type"
+    t.integer  "role_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

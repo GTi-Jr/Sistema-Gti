@@ -2,8 +2,8 @@
 
 one:
   name: MyString
-  type: 1
+  role_type: 1
 
 two:
   name: MyString
-  type: 1
+  role_type: 1
