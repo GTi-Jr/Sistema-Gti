@@ -55,3 +55,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 #for user create
 gem 'devise'
 gem 'carrierwave'
+gem 'will_paginate'
