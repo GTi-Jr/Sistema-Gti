@@ -1,5 +1,6 @@
 class AdvertisementsController < ApplicationController
 layout 'member_dashboard'
+before_action :get_member
 def index
   @advertisements = Advertisement.all.order('id DESC').paginate(page: params[:page], per_page: 50)
 end
@@ -14,7 +15,7 @@ def create
   respond_to do |format|
   #3if @categories.name = !Category.name.empty?
     if @advertisement.save
-      format.html { redirect_to advertisements_path, notice1: 'Advertência criada com sucesso!' }
+      format.html { redirect_to advertisements_path, notice: 'Advertência criada com sucesso!' }
     else
       format.html { render :new }
       #format.json { render json: @categories.errors, status: :unprocessable_entity }
@@ -57,7 +58,7 @@ def destroy
 end
 
 def advertisement_params
-    params.require(:advertisement).permit(:date, :reason)
+    params.require(:advertisement).permit(:date, :reason,:member_id)
 end
 # def search
 #   @advertisement_suggestions = SearchTable.searchcategory(queryString: params[:queryString].strip.downcase)
