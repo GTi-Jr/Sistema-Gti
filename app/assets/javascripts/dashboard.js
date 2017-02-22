@@ -28,3 +28,5 @@
 
 
 //= require custom.min.js
+
+//= require jquery_ujs
