@@ -1,19 +1,26 @@
+
+    <% if flash[:alert] %>
+<p class="flash-error"><%= flash[:alert] %></p>
+<% end %>
+<% if flash[:notice] %>
+<p class="flash-notice"><%= flash[:notice] %></p>
+<% end %>
 <div class="right_col" role="main">
 
   <div class="row tile_count">
 <div class="col-md-12 col-sm-12 col-xs-12">
    <div class="x_panel">
       <div class="x_title">
-         <h2>Gerenciamento de Advertências</h2>
+         <h2>Gerenciamento de Conquistas</h2>
          <div class="clearfix"></div>
       </div>
       <div class="x_content">
-      <%= will_paginate @advertisements %>
+      <%= will_paginate @achievements %>
          <table id="mytable", class="table table-striped table-bordered">
          <div class="title_right">
                <div class=" form-group pull-right top_search">
                   <div class="input-group">
-                    <input class="form-control" id="inputSuccess5" onkeyup="searchadvertisements(this.value);" class="form-control" placeholder="Procurar por nome">
+                    <input class="form-control" id="inputSuccess5" onkeyup="searchachievements(this.value);" class="form-control" placeholder="Procurar por nome">
                   </div>
                 </div>
          </div>
@@ -21,25 +28,26 @@
             <thead>
                <tr>
 
-                  <th>Data</th>
-                  <th>Motivo</th>
-                  <th>Membro</th>
+                  <th>Avatar</th>
+                  <th>Nome</th>
+                  <th>Pontuação</th>
+                    <th>Descrição</th>
                   <th>Configurações</th>
                </tr>
             </thead>
-            <tbody id="tablerowadvertisements">
-               <% @advertisements.each do |advertisement| %>
+            <tbody id="tablerowachievements">
+               <% @achievements.each do |achievement| %>
                <tr>
 
                   <!-- <td><%= image_tag 'simao', class:'img-circle profile_img listable'%> </td> -->
-                  <td><%= advertisement.date%></td>
-                  <td><%= advertisement.reason%></td>
-
-                  <td><%= image_tag 'simao', class:'circular'%><%= advertisement.member.name%></td>
-                  <td colspan="3"><%= link_to  edit_advertisement_path(advertisement) do %>
+                  <td><%= image_tag 'simao', class:'circular'%> </td>
+                  <td><%= achievement.name%></td>
+                  <td><%= achievement.description%></td>
+                  <td><%= achievement.value%></td>
+                  <td colspan="3"><%= link_to  edit_achievement_path(achievement) do %>
                         <span class="glyphicon glyphicon-wrench" aria-hidden="true" style="margin-left: 5px"></span>
                   <% end %> <i style="margin-left:3px"></i>
-                  <%= link_to advertisement, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                  <%= link_to achievement, method: :delete, data: { confirm: 'Are you sure?' } do %>
                         <span class="glyphicon glyphicon-remove" aria-hidden="true" style="margin-left: 20px"></span>
                   <% end %>
                   </td>
@@ -50,5 +58,5 @@
       </div>
    </div>
 </div>
-</div></div>
+
 <%= will_paginate @users %>
