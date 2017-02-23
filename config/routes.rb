@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   }
   # :skip => 'registration',
   devise_scope :member do
+    resources :members, :path => 'membros'
     authenticated :member do
       root to: 'member_dashboard#index',  as: :authenticated_member_root
     end

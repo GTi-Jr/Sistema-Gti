@@ -1,5 +1,11 @@
 <div class="right_col" role="main">
   <div class="row tile_count">
+    <% if flash[:alert] %>
+<p class="flash-error"><%= flash[:alert] %></p>
+<% end %>
+<% if flash[:notice] %>
+<p class="flash-notice"><%= flash[:notice] %></p>
+<% end %>
     <%= render 'member_dashboard/shared/notices' %>
     Aqui deve ficar o ranking global e a lista de notícias e um calendário.
     <%= render 'member_dashboard/shared/ranking' %>

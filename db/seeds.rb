@@ -12,6 +12,11 @@ Role.create(name:"Diretor Presidente",role_type: 1)
 Role.create(name:"Diretor Administratio Financeiro",role_type: 1)
 Role.create(name:"Desenvolvedor",role_type: 1)
 Role.create(name:"Trainee",role_type: 1)
+
 Member.create(name: "Lucas Simão",email:"lucas64_64@hotmail.com", password: '12346578' ,encrypted_password: "$2a$11$LU5oCztZ.I3CAXNCYU1Y4OLdTM/JIiVcbX1sH46qmZ47SxOGp1iKu",picture:"/simao.jpg",role: Role.find_by(name: "Diretor de Projetos"))
+Member.create(name: "Carlos Adolfo",email:"adolfo@hotmail.com", password: '12346578' ,encrypted_password: "$2a$11$LU5oCztZ.I3CAXNCYU1Y4OLdTM/JIiVcbX1sH46qmZ47SxOGp1iKu",picture:"/simao.jpg",role: Role.find_by(name: "Diretor de Talentos"))
+Member.create(name: "Gabriel das Neves",email:"gabriel@hotmail.com", password: '12346578' ,encrypted_password: "$2a$11$LU5oCztZ.I3CAXNCYU1Y4OLdTM/JIiVcbX1sH46qmZ47SxOGp1iKu",picture:"/simao.jpg",role: Role.find_by(name: "Diretor Presidente"))
+
+
 Advertisement.create!(date:"18-03-1996", reason: "Não completou a atividade", member: Member.find_by(name: "Lucas Simão"))
 Advertisement.create!(date:"18-03-1996", reason: "Faltou Reunião", member: Member.find_by(name: "Lucas Simão"))

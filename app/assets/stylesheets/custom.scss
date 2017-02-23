@@ -4050,3 +4050,19 @@ ul.notifications {
   background-color: $button-color-hover;
   color: $button-text-color-hover !important;
 }
+
+.listable{
+  max-height: 10% !important;
+  max-width: 10% !important;
+}
+
+.circular {
+   width: 40px;
+   border-radius: 150px;
+  -webkit-border-radius: 150px;
+  -moz-border-radius: 150px;
+
+  }
+  .hovertolink:hover {
+   background: #D3D3D3;
+  }
