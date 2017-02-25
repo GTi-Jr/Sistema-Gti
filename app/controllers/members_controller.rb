@@ -2,6 +2,7 @@ class MembersController < ApplicationController
   layout 'member_dashboard'
   before_action :get_member
   before_action :auth_director
+  before_action :set_member, only: [:show, :edit, :update, :destroy]
   def show
   end
 
@@ -14,13 +15,12 @@ class MembersController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
-      @advertisement = Advertisement.find(params[:id])
+      @member = Member.find(params[:id])
       respond_to do |format|
-          if @advertisement.update(advertisement_params)
+          if @member.update(member_params)
               format.html { redirect_to advertisements_path, notice: 'Advertência foi editada com sucesso.' }
           else
               format.html { render :edit }
@@ -28,7 +28,11 @@ class MembersController < ApplicationController
           end
       end
   end
-
-
+  def member_params
+      params.require(:member).permit(:name, :email,:join_date, :course,:role)
+  end
+  def set_member
+      @member = Member.find(params[:id])
+  end
 
 end

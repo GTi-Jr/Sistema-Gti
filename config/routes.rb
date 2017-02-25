@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     sign_up: 'cadastro',
     password: 'secret',
     unlock: 'unblock',
+    edit: 'alterar'
     # registration: 'inscription'
     # sign_up: 'new'
   }
