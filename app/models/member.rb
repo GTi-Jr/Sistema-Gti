@@ -7,4 +7,16 @@ class Member < ApplicationRecord
     devise :database_authenticatable, :registerable,
            :recoverable, :rememberable, :trackable, :validatable
     mount_uploader :avatar, AvatarUploader
+
+    attr_accessor :score
+
+    # getter
+    def score
+        # puts "SASS"
+        @score = achievements.sum(:value)
+        #  achievements.each do |achievement|
+        #     @score += achievement.value
+        # end
+      # end
+    end
 end

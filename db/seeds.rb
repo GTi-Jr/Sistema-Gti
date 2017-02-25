@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Role.create!(name:"Diretor de Projetos",role_type: 1)
+Role.create(name:"Diretor de Projetos",role_type: 1)
 Role.create(name:"Diretor de Talentos",role_type: 1)
 Role.create(name:"Diretor de Marketing",role_type: 1)
 Role.create(name:"Diretor Presidente",role_type: 1)
@@ -13,23 +13,16 @@ Role.create(name:"Diretor Administratio Financeiro",role_type: 1)
 Role.create(name:"Desenvolvedor",role_type: 2)
 Role.create(name:"Trainee",role_type: 3)
 
-Member.create!(name: "Lucas Simão",email:"lucas64_64@hotmail.com", password: '12346578' ,encrypted_password: "$2a$11$LU5oCztZ.I3CAXNCYU1Y4OLdTM/JIiVcbX1sH46qmZ47SxOGp1iKu",picture:"/simao.jpg",role: Role.find_by(name: "Diretor de Projetos"))
-Member.create(name: "Carlos Adolfo",email:"adolfo@hotmail.com", password: '12346578' ,encrypted_password: "$2a$11$LU5oCztZ.I3CAXNCYU1Y4OLdTM/JIiVcbX1sH46qmZ47SxOGp1iKu",picture:"/simao.jpg",role: Role.find_by(name: "Diretor de Talentos"))
-Member.create(name: "Gabriel das Neves",email:"gabriel@hotmail.com", password: '12346578' ,encrypted_password: "$2a$11$LU5oCztZ.I3CAXNCYU1Y4OLdTM/JIiVcbX1sH46qmZ47SxOGp1iKu",picture:"/simao.jpg",role: Role.find_by(name: "Diretor Presidente"))
-Member.create(name: "Joaozinho da Feira",email:"joaozinho@hotmail.com", password: '12346578' ,encrypted_password: "$2a$11$LU5oCztZ.I3CAXNCYU1Y4OLdTM/JIiVcbX1sH46qmZ47SxOGp1iKu",picture:"/simao.jpg",role: Role.find_by(name: "Desenvolvedor"))
 
 
 
-Advertisement.create!(date:"18-03-1996", reason: "Não completou a atividade", member: Member.find_by(name: "Lucas Simão"))
-Advertisement.create(date:"18-03-1996", reason: "Faltou Reunião", member: Member.find_by(name: "Lucas Simão"))
-
-Achievement.create!(name: "Hans Solo Shots First", description: "Primeiro a entregar um trabalho/sprint/tarefa", value:30)
+Achievement.create(name: "Hans Solo Shots First", description: "Primeiro a entregar um trabalho/sprint/tarefa", value:30)
 Achievement.create(name: "Missão Dada…", description: "Aceitar um aumento de funcionalidade em seu trabalho", value:30)
 Achievement.create(name: "… É Missão Cumprida", description: "Finalizar trabalho com funcionalodade extra corretamente no prazo", value:30)
 Achievement.create(name: "#somosTodosCaio", description: "Participar de mais da metade das sessões tira-dúvidas/monitorias", value:30)
 Achievement.create(name: "Triforce: Sabedoria", description: "Terminar curso de Git", value:30)
 Achievement.create(name: "Triforce: Poder", description: "Terminar Desafio Rails", value:30)
-Achievement.create(name: "Triforce: Coragem", description: "Terminar Desafio HTML/CSS com ou sem Wordpress", value:30)
+Achievement.create(name: "Triforce: Coragem", description: "Terminar Desafio HTML/CSS com ou sem Wordpress", value:10)
 Achievement.create(name: "Despertar da Força", description: "Se tornar Membro Efetivo", value:30)
 Achievement.create(name: "Action Stations!", description: "Entrar no primeiro projeto", value:30)
 Achievement.create(name: "Welcome!", description: "Realizar marketing para a GTi", value:30)
@@ -58,3 +51,13 @@ Achievement.create(name: "Bando de Burguês Safado!", description: "Vender um pr
 Achievement.create(name: "Você sem fronteiras", description: "Negociar com clientes de fora do estado", value:30)
 Achievement.create(name: "Eu vim ver o macaco", description: "Visitar uma empresa concorrente", value:30)
 Achievement.create(name: "Mais de 8 mil!", description: "Ultrapassar 8000 pontos", value:30)
+
+lucas = Member.create(name: "Lucas Simão",email:"lucas64_64@hotmail.com", password: '12346578' ,encrypted_password: "$2a$11$LU5oCztZ.I3CAXNCYU1Y4OLdTM/JIiVcbX1sH46qmZ47SxOGp1iKu",picture:"/simao.jpg",role: Role.find_by(name: "Diretor de Projetos"))
+# lucas.achievements << Achievement.find_by(name:"Welcome!")
+adolfo = Member.create(name: "Carlos Adolfo",email:"adolfo@hotmail.com", password: '12346578' ,encrypted_password: "$2a$11$LU5oCztZ.I3CAXNCYU1Y4OLdTM/JIiVcbX1sH46qmZ47SxOGp1iKu",picture:"/simao.jpg",role: Role.find_by(name: "Diretor de Talentos"))
+# adolfo.achievements << Achievement.find_by(name:"Triforce: Coragem")
+Member.create(name: "Gabriel das Neves",email:"gabriel@hotmail.com", password: '12346578' ,encrypted_password: "$2a$11$LU5oCztZ.I3CAXNCYU1Y4OLdTM/JIiVcbX1sH46qmZ47SxOGp1iKu",picture:"/simao.jpg",role: Role.find_by(name: "Diretor Presidente"))
+Member.create(name: "Joaozinho da Feira",email:"joaozinho@hotmail.com", password: '12346578' ,encrypted_password: "$2a$11$LU5oCztZ.I3CAXNCYU1Y4OLdTM/JIiVcbX1sH46qmZ47SxOGp1iKu",picture:"/simao.jpg",role: Role.find_by(name: "Desenvolvedor"))
+
+Advertisement.create(date:"18-03-1996", reason: "Não completou a atividade", member: Member.find_by(name: "Lucas Simão"))
+Advertisement.create(date:"18-03-1996", reason: "Faltou Reunião", member: Member.find_by(name: "Lucas Simão"))

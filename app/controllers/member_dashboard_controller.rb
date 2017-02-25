@@ -4,7 +4,10 @@ class MemberDashboardController < ApplicationController
   before_action :get_member
 
   def index
-
+    # @members = Member.all.order('name DESC').paginate(page: params[:page], per_page: 50)
+    @members = Member.joins(:achievements)
+    .group("members.id").order("SUM(achievements.value) DESC")
+    .paginate(page: params[:page], per_page: 10)
   end
 
 end

@@ -21,7 +21,7 @@ class MembersController < ApplicationController
       @member = Member.find(params[:id])
       respond_to do |format|
           if @member.update(member_params)
-              format.html { redirect_to advertisements_path, notice: 'Advertência foi editada com sucesso.' }
+              format.html { redirect_to members_path, notice: 'Membro foi editada com sucesso.' }
           else
               format.html { render :edit }
               # format.json { render json: @advertisement.errors, status: :unprocessable_entity }
@@ -33,6 +33,14 @@ class MembersController < ApplicationController
   end
   def set_member
       @member = Member.find(params[:id])
+  end
+
+  def destroy
+      @member.destroy
+      respond_to do |format|
+          format.html { redirect_to members_path(@member) }
+          format.xml { head :ok }
+      end
   end
 
 end
