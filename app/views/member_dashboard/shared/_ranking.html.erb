@@ -1,11 +1,10 @@
-<div class="right_col" role="main">
+
     <div class="row tile_count">
         <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="x_panel">
                 <div class="x_title">
                     <h2>Ranking</h2>
                     <div class="clearfix"></div>
-
 
                     <%= will_paginate @members %>
 
@@ -20,39 +19,33 @@
                     </div>
                     <thead>
                         <tr>
-
+                            <th>Rank</th>
                             <th>Avatar</th>
+                            <th>Pontuação</th>
                             <th>Nome</th>
-                            <th>Email</th>
 
                             <!--<th>Contato</th>-->
                             <th>Cargo</th>
-                            <th>Cadastrado em</th>
+
                         </tr>
                     </thead>
                     <tbody id="tablerowmembers">
-                        <% @members.each do |member| %>
+                        <% @members.each_with_index do |member, index| %>
                         <tr>
-
+                            <td><%= index +1 %></td>
                             <!-- <td><%= image_tag 'simao', class:'img-circle profile_img listable'%> </td> -->
                             <td><%= image_tag 'simao', class:'circular'%>
                             </td>
+                            <td><%= member.name%></td>
                             <td><%= member.score%></td>
-                            <td><%= member.email%></td>
                             <td><%= member.role.name%></td>
                             <!--<td><%#= members.phone_number%></td>-->
-
-                            <td><%= member.created_at.strftime("%d/%m/%Y %H:%M:%S")%></td>
                         </tr>
                         <%end%>
 
                     </tbody>
-                    </table>
+                </table>
 
-
-
-
-                </div>
             </div>
         </div>
     </div>

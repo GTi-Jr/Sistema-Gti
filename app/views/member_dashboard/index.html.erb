@@ -5,6 +5,9 @@
 <% if flash[:notice] %>
 <p class="flash-notice"><%= flash[:notice] %></p>
 <% end %>
+<div class="right_col" role="main">
+
     <%= render 'member_dashboard/shared/notices' %>
     Aqui deve ficar o ranking global e a lista de notícias e um calendário.
     <%= render 'member_dashboard/shared/ranking' %>
+</div>

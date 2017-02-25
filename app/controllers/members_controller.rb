@@ -10,6 +10,9 @@ class MembersController < ApplicationController
     @members = Member.all.order('id DESC').paginate(page: params[:page], per_page: 50)
   end
 
+def show
+end
+
   def new
     @member = Member.new
   end
