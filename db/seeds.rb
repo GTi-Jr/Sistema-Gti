@@ -53,9 +53,9 @@ Achievement.create(name: "Eu vim ver o macaco", description: "Visitar uma empres
 Achievement.create(name: "Mais de 8 mil!", description: "Ultrapassar 8000 pontos", value:30)
 
 lucas = Member.create(name: "Lucas Simão",email:"lucas64_64@hotmail.com", password: '12346578' ,encrypted_password: "$2a$11$LU5oCztZ.I3CAXNCYU1Y4OLdTM/JIiVcbX1sH46qmZ47SxOGp1iKu",picture:"/simao.jpg",role: Role.find_by(name: "Diretor de Projetos"))
-# lucas.achievements << Achievement.find_by(name:"Welcome!")
+lucas.achievements << Achievement.find_by(name:"Welcome!")
 adolfo = Member.create(name: "Carlos Adolfo",email:"adolfo@hotmail.com", password: '12346578' ,encrypted_password: "$2a$11$LU5oCztZ.I3CAXNCYU1Y4OLdTM/JIiVcbX1sH46qmZ47SxOGp1iKu",picture:"/simao.jpg",role: Role.find_by(name: "Diretor de Talentos"))
-# adolfo.achievements << Achievement.find_by(name:"Triforce: Coragem")
+adolfo.achievements << Achievement.find_by(name:"Triforce: Coragem")
 Member.create(name: "Gabriel das Neves",email:"gabriel@hotmail.com", password: '12346578' ,encrypted_password: "$2a$11$LU5oCztZ.I3CAXNCYU1Y4OLdTM/JIiVcbX1sH46qmZ47SxOGp1iKu",picture:"/simao.jpg",role: Role.find_by(name: "Diretor Presidente"))
 Member.create(name: "Joaozinho da Feira",email:"joaozinho@hotmail.com", password: '12346578' ,encrypted_password: "$2a$11$LU5oCztZ.I3CAXNCYU1Y4OLdTM/JIiVcbX1sH46qmZ47SxOGp1iKu",picture:"/simao.jpg",role: Role.find_by(name: "Desenvolvedor"))
 
