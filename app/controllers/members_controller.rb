@@ -13,9 +13,22 @@ class MembersController < ApplicationController
     @member = Member.new
   end
 
-  def auth_director
-    if @member.role.role_type != 1
-      redirect_to  "/" , notice: 'Você não possui permissão para acessar a página.'
-    end
+  def edit
+
   end
+
+  def update
+      @advertisement = Advertisement.find(params[:id])
+      respond_to do |format|
+          if @advertisement.update(advertisement_params)
+              format.html { redirect_to advertisements_path, notice: 'Advertência foi editada com sucesso.' }
+          else
+              format.html { render :edit }
+              # format.json { render json: @advertisement.errors, status: :unprocessable_entity }
+          end
+      end
+  end
+
+
+
 end

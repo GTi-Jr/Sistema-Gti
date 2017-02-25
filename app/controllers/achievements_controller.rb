@@ -1,6 +1,7 @@
 class AchievementsController < ApplicationController
   layout 'member_dashboard'
   before_action :get_member
+  before_action :auth_director
   before_action :set_achievement, only: [:show, :edit, :update, :destroy]
   def index
     @achievements = Achievement.all.order('id DESC').paginate(page: params[:page], per_page: 50)

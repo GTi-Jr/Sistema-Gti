@@ -1,7 +1,9 @@
 class AdvertisementsController < ApplicationController
     layout 'member_dashboard'
     before_action :get_member
+    before_action :auth_director
     before_action :set_advertisement, only: [:show, :edit, :update, :destroy]
+
     def index
         @advertisements = Advertisement.all.order('id DESC').paginate(page: params[:page], per_page: 50)
     end
@@ -27,7 +29,7 @@ class AdvertisementsController < ApplicationController
         end
     end
 
-    def edit; end
+    def edit end
 
     def update
         @advertisement = Advertisement.find(params[:id])
