@@ -14,7 +14,7 @@ Role.create(name:"Desenvolvedor",role_type: 2)
 Role.create(name:"Trainee",role_type: 3)
 
 
-
+# Tecnology.create(name: "Javascript",description: "Linguagem de navegador",avatar:"js.png")
 
 Achievement.create(name: "Hans Solo Shots First", description: "Primeiro a entregar um trabalho/sprint/tarefa", value:30)
 Achievement.create(name: "Missão Dada…", description: "Aceitar um aumento de funcionalidade em seu trabalho", value:30)
@@ -53,11 +53,36 @@ Achievement.create(name: "Eu vim ver o macaco", description: "Visitar uma empres
 Achievement.create(name: "Mais de 8 mil!", description: "Ultrapassar 8000 pontos", value:30)
 
 lucas = Member.create(name: "Lucas Simão",email:"lucas64_64@hotmail.com", password: '12346578' ,encrypted_password: "$2a$11$LU5oCztZ.I3CAXNCYU1Y4OLdTM/JIiVcbX1sH46qmZ47SxOGp1iKu",picture:"/simao.jpg",role: Role.find_by(name: "Diretor de Projetos"))
-lucas.achievements << Achievement.find_by(name:"Welcome!")
 adolfo = Member.create(name: "Carlos Adolfo",email:"adolfo@hotmail.com", password: '12346578' ,encrypted_password: "$2a$11$LU5oCztZ.I3CAXNCYU1Y4OLdTM/JIiVcbX1sH46qmZ47SxOGp1iKu",picture:"/simao.jpg",role: Role.find_by(name: "Diretor de Talentos"))
-adolfo.achievements << Achievement.find_by(name:"Triforce: Coragem")
-Member.create(name: "Gabriel das Neves",email:"gabriel@hotmail.com", password: '12346578' ,encrypted_password: "$2a$11$LU5oCztZ.I3CAXNCYU1Y4OLdTM/JIiVcbX1sH46qmZ47SxOGp1iKu",picture:"/simao.jpg",role: Role.find_by(name: "Diretor Presidente"))
+das = Member.create(name: "Gabriel das Neves",email:"gabriel@hotmail.com", password: '12346578' ,encrypted_password: "$2a$11$LU5oCztZ.I3CAXNCYU1Y4OLdTM/JIiVcbX1sH46qmZ47SxOGp1iKu",picture:"/simao.jpg",role: Role.find_by(name: "Diretor Presidente"))
+ray = Member.create(name: "Rayane MAria",email:"ray@hotmail.com", password: '12346578' ,encrypted_password: "$2a$11$LU5oCztZ.I3CAXNCYU1Y4OLdTM/JIiVcbX1sH46qmZ47SxOGp1iKu",picture:"/simao.jpg",role: Role.find_by(name: "Diretor de Talentos"))
+pintoxD = Member.create(name: "Otto Pinto",email:"otto@hotmail.com", password: '12346578' ,encrypted_password: "$2a$11$LU5oCztZ.I3CAXNCYU1Y4OLdTM/JIiVcbX1sH46qmZ47SxOGp1iKu",picture:"/simao.jpg",role: Role.find_by(name: "Desenvolvedor"))
+patrick = Member.create(name: "Patrick Magalhães",email:"patrick@hotmail.com", password: '12346578' ,encrypted_password: "$2a$11$LU5oCztZ.I3CAXNCYU1Y4OLdTM/JIiVcbX1sH46qmZ47SxOGp1iKu",picture:"/simao.jpg",role: Role.find_by(name: "Desenvolvedor"))
+
 Member.create(name: "Joaozinho da Feira",email:"joaozinho@hotmail.com", password: '12346578' ,encrypted_password: "$2a$11$LU5oCztZ.I3CAXNCYU1Y4OLdTM/JIiVcbX1sH46qmZ47SxOGp1iKu",picture:"/simao.jpg",role: Role.find_by(name: "Desenvolvedor"))
+
+adolfo.achievements << Achievement.find_by(name:"Triforce: Coragem")
+lucas.achievements << Achievement.find_by(name:"Welcome!")
 
 Advertisement.create(date:"18-03-1996", reason: "Não completou a atividade", member: Member.find_by(name: "Lucas Simão"))
 Advertisement.create(date:"18-03-1996", reason: "Faltou Reunião", member: Member.find_by(name: "Lucas Simão"))
+
+
+rails = Tecnology.create!(name: "Ruby on Rails",description: "Framework Ruby on Rails",avatar:"rails.png")
+html = Tecnology.create(name: "HTML,CSS,JS",description: "Linguagem de marcação",avatar:"html.png")
+wp = Tecnology.create(name: "Wordpress",description: "Framework PHP para criação de sites",avatar:"wp.png")
+
+conceito = Activity.create(name:"Curso Conceito", description: "Aplicativo para uma escola",status: "Andamento",activity_type: "Projeto",client: "João")
+sonu = Activity.create(name:"Sistema Sonu", description: "Sistema para organização das nações",status: "Andamento",activity_type: "Projeto",client: "Maria")
+ecej = Activity.create(name:"Sistema ECEJ", description: "Sistema de Cadastro do ECEJ",status: "Iniciar",activity_type: "Projeto",client: "Dedé")
+conceito.tecnologies << Tecnology.find_by(name: "Ruby on Rails")
+sonu.tecnologies << rails
+ecej.tecnologies << Tecnology.find_by(name: "Ruby on Rails")
+
+conceito.members << ray
+conceito.members << patrick
+
+sonu.members << pintoxD
+sonu.members << das
+
+ecej.members << patrick

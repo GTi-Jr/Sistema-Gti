@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170225031346) do
+ActiveRecord::Schema.define(version: 20170226023308) do
 
   create_table "achievements", force: :cascade do |t|
     t.string   "name"
@@ -25,6 +25,30 @@ ActiveRecord::Schema.define(version: 20170225031346) do
   create_table "achievements_members", id: false, force: :cascade do |t|
     t.integer "member_id",      null: false
     t.integer "achievement_id", null: false
+  end
+
+  create_table "activities", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "status"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "activity_type"
+    t.string   "client"
+  end
+
+  create_table "activities_members", id: false, force: :cascade do |t|
+    t.integer "member_id",   null: false
+    t.integer "activity_id", null: false
+    t.index ["activity_id", "member_id"], name: "index_activities_members_on_activity_id_and_member_id"
+    t.index ["member_id", "activity_id"], name: "index_activities_members_on_member_id_and_activity_id"
+  end
+
+  create_table "activities_tecnologies", id: false, force: :cascade do |t|
+    t.integer "activity_id",  null: false
+    t.integer "tecnology_id", null: false
+    t.index ["activity_id", "tecnology_id"], name: "index_activities_tecnologies_on_activity_id_and_tecnology_id"
+    t.index ["tecnology_id", "activity_id"], name: "index_activities_tecnologies_on_tecnology_id_and_activity_id"
   end
 
   create_table "advertisements", force: :cascade do |t|
@@ -67,6 +91,14 @@ ActiveRecord::Schema.define(version: 20170225031346) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_roles_on_name", unique: true
+  end
+
+  create_table "tecnologies", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "avatar"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end

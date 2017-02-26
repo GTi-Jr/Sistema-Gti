@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :members, controllers:{
     sessions: 'members/sessions',
     passwords: 'members/passwords',
@@ -23,6 +24,8 @@ Rails.application.routes.draw do
     resources :members, :path => 'membros'
     resources :achievements, :path => 'conquistas'
     resources :advertisements, :path => 'advertencias'
+    resources :tecnologies, :path => 'tecnologias'
+    resources :activities, :path => 'atividades'
     authenticated :member do
       root to: 'member_dashboard#index',  as: :authenticated_member_root
     end
